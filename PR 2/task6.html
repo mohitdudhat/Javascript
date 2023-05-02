@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    console.log("Calculate percentage and grade");
+    let physics = parseInt(prompt("Enter marks of Physics:-"));
+    let chemistry = parseInt(prompt("Enter marks of Chemistry:-"));
+    let biology = parseInt(prompt("Enter marks of Biology:-"));
+    let mathematics = parseInt(prompt("Enter marks of Mathematics:-"));
+    let computer = parseInt(prompt("Enter marks of Computer:-"));
+
+    console.log("Physics Marks:- " + physics);
+    console.log("Chemistry Marks:- " + chemistry);
+    console.log("Biology Marks:- " + biology);
+    console.log("Mathematics Marks:- " + mathematics);
+    console.log("Computer Marks:- " + computer);
+
+    let percentage = (physics + chemistry + biology + mathematics + computer) / 5;
+
+    console.log("Your Percentage is:- " + percentage);
+
+    if (percentage >= 90) {
+        console.log("Youe Grade is A");
+    } else if (percentage >= 80) {
+        console.log("Your Grade is B");
+    } else if (percentage >= 70) {
+        console.log("Your Grade is C");
+    } else if (percentage >= 60) {
+        console.log("Your Grade is D");
+    } else if (percentage >= 50) {
+        console.log("Your Grade is E");
+    } else if (percentage >= 40) {
+        console.log("Your Grade is F");
+    }
+</script>

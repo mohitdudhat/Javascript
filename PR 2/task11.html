@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    console.log("Calculator");
+    let num1 = parseInt(prompt("Enter number of A:-"));
+    let num2 = parseInt(prompt("Enter number of B:-"));
+    let operator = prompt("Enter a ( + , - , * , / ):- ");
+
+    console.log("A:- " + num1);
+    console.log("B:- " + num2);
+    console.log("You choose " + operator);
+
+
+    if (operator == '+') {
+        console.log("A + B = " + (num1 + num2));
+    } else if (operator == '-') {
+        console.log("A - B = " + (num1 - num2));
+    } else if (operator == '*') {
+        console.log("A * B = " + (num1 * num2));
+    } else if (operator == '/') {
+        console.log("A / B = " + (num1 / num2));
+    } else {
+        console.log("Invaild choice");
+    }
+
+</script>
