@@ -1,0 +1,17 @@
+<script type="text/javascript">
+    console.log("Find Are you eligible for vote or not?");
+
+    function eligible() {
+        console.log("no parameter and with return");
+        let age = parseInt(prompt("Enter your age:-"));
+
+        console.log("Youe age is " + age);
+        return age;
+    }
+    let age = eligible();
+    if (age >= 18) {
+        console.log("You can vote.");
+    } else {
+        console.log("You can not vote.");
+    }
+</script>

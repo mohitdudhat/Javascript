@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    let a = parseInt(prompt("Enter number of A:-"));
+    let b = parseInt(prompt("Enter number of B:-"));
+    let c = parseInt(prompt("Enter number of C:-"));
+    let d = parseInt(prompt("Enter number of D:-"));
+
+    console.log("A:- " +a);
+    console.log("B:- " +b);
+    console.log("C:- " +c);
+    console.log("D:- " +d);
+    
+    console.log(grater(a,b,c,d));
+    
+    function grater(a,b,c,d){
+        if(a>b && a>c && a>d){
+            console.log("A is Big");
+        }else if(b>a && b>c && b>d){
+            console.log("B is Big");
+        }else if(c>a && c>b && c>d){
+            console.log("C is Big");
+        }else if(d>a && d>b && d>c){
+            console.log("D is Big");
+        }
+    }
+</script>

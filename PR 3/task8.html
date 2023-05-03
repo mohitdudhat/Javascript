@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    function calc() {
+        console.log("Calculator");
+        let num1 = parseInt(prompt("Enter number of A:-"));
+        let num2 = parseInt(prompt("Enter number of B:-"));
+        let oprator = prompt("Enter a ( + , - , * , / ):- ");
+
+        console.log("A:- " + num1);
+        console.log("B:- " + num2);
+        console.log("Your operator is " + oprator);
+
+        switch (oprator) {
+            case '+':
+                console.log("A + B = " + (num1 + num2));
+                break;
+            case '-':
+                console.log("A - B = " + (num1 - num2));
+                break;
+            case '*':
+                console.log("A * B = " + (num1 * num2));
+                break;
+            case '/':
+                console.log("A / B = " + (num1 / num2));
+                break;
+            default:
+                console.log("In vaild choice");
+                break;
+        }
+    }
+    calc();
+</script>

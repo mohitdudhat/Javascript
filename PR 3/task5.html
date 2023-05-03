@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    function addition(){
+        let a = parseInt(prompt("Enter number of A:-"));
+        let b = parseInt(prompt("Enter number of B:-"));
+        console.log("A:- " +a);
+        console.log("B:- " +b);
+        console.log("Sum = " +(a+b));
+    }
+    function subtraction(){
+        let a = parseInt(prompt("Enter number of A:-"));
+        let b = parseInt(prompt("Enter number of B:-"));
+        console.log("A:- " +a);
+        console.log("B:- " +b);
+        console.log("Subtraction = " +(a-b));
+    }
+    function multiplication(){
+        let a = parseInt(prompt("Enter number of A:-"));
+        let b = parseInt(prompt("Enter number of B:-"));
+        console.log("A:- " +a);
+        console.log("B:- " +b);
+        console.log("Multiplication = " +(a*b));
+    }
+    function division(){
+        let a = parseInt(prompt("Enter number of A:-"));
+        let b = parseInt(prompt("Enter number of B:-"));
+        console.log("A:- " +a);
+        console.log("B:- " +b);
+        console.log("Division = " +(a/b));
+    }
+ 
+    let c = prompt("Enter a ( + , - , * , / ):- ");
+    
+    if(c=='+'){
+        addition();
+    }else if(c=='-'){
+        subtraction();
+    }else if(c=='*'){
+        multiplication();
+    }else if(c=='/'){
+        division();
+    }else{
+        console.log("In vaild choice");
+    }
+    
+</script>
