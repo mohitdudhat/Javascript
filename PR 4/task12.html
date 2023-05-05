@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    let number = parseInt(prompt("Enter Your Number:"));
+    let check = 1;
+    let i = 2;
+    while(i < number) {
+        if(number % i === 0){
+            check = 0;
+        }
+        i++
+    }
+    if(check === 0){
+        console.log("number is not prime");
+    }else{
+        console.log("number is prime");
+    }
+</script>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    let number = parseInt(prompt("Enter Your Number:")); //0 ,1,1,2,3
+    let num1= 0;
+    let num2 = 1;
+    let total = 0;
+    let print = "";
+    for(let i = 1;i <= number;i++){
+        (i===number)?print += num1:print += num1 + " , ";
+        total = num1 + num2;
+        num1=num2;
+        num2 =total;
+
+    }
+    console.log(print);
+</script>
