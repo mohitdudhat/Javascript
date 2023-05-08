@@ -1,0 +1,58 @@
+<table border="1" style="border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>GRID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody id="tableData">
+
+    </tbody>
+</table>
+<script type = "text/javascript">
+    'use strict';
+    let tableData = "";
+    let row1 = ["355","Mohit Dudhat","355mohitdudhat@gmail.com","Frontend Developer"];
+    let row2 = ["1400","Dhairya Dobariya", "Dhairyadobariya@gmail.com","Back-end Developer"];
+    let row3 = ["1499","Kenil Godhani", "Kenilgodhani@gmail.com","Back-end Developer"];
+    let row4 = ["1200","Hemanshi Bokha", "hemanshibokha@gmail.com","Back-end Developer"];
+    let data = [row1,row2,row3,row4];
+    //making table
+    for (var i in data){
+        console.log(data[i]);
+        tableData += `
+            <tr>
+                <td>${data[i][0]}</td>
+                <td>${data[i][1]}</td>
+                <td>${data[i][2]}</td>
+                <td>${data[i][3]}</td>
+            </tr>
+        `;
+    document.getElementById('tableData').innerHTML = tableData;
+    }
+    console.log(tableData);
+    let course = prompt("Enter Your Course");
+    //search
+    tableData = "";
+    for (var i in data){
+        if (data[i][3] === course){
+       
+        console.log("pass");
+        tableData += `
+            <tr>
+                ${for (j in data[i]{
+                    return '<td>${data[i][0]}</td>'
+                } }
+                
+                <td>${data[i][1]}</td>
+                <td>${data[i][2]}</td>
+                <td>${data[i][3]}</td>
+            </tr>
+        `;
+        document.getElementById('tableData').innerHTML = tableData;
+    }
+    }
+
+</script>
