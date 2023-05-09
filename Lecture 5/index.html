@@ -1,0 +1,29 @@
+<script type = "text/javascript">
+    let arr = ["php","angular js","android","ruby","python"];
+    console.log(arr);
+    console.log("Sorted :- " + arr.sort());
+    console.log("Reversed :- " + arr.reverse());
+    console.log("Last element removed :- " + arr.pop());
+    console.log(arr);
+    arr.unshift("first element");
+    console.log("Element added in first place :- "+ arr);
+    console.log(arr);
+    let string = prompt("Enter Your string (In Lowercase)");
+    console.log("Converted Lowercase to Uppercase :- " + string.toUpperCase());
+    console.log("Converted Uppercase to Lowercase :- " + string.toLowerCase());
+    console.log(string.split(""));
+
+    let number = [15,25,25,235,-210];
+    let start = 0
+    let sum = number.map(function(number){
+        start += number;
+        return start;;
+    });
+    console.log("Sum of Array is " + sum[sum.length-1]);
+    let filter = number.filter(function(number){
+        if(number<0) return number;
+    })
+    console.log(filter + " is negative number");
+    let arrayToString = arr.join(", ");
+    console.log(arrayToString);
+</script>
