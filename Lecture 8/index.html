@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <table border="1" style="border-collapse:collapse">
+        <tbody>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="text" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Submit:
+                </td>
+                <td>
+                    <button type="button" onclick="save()">Submit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <table border="1" style="border-collapse:collapse">
+        <thead>
+            <tr>
+                <th>Name</th>
+            
+                <th>Email</th>
+            
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+         
+        </tbody>
+    </table>
+</body>
+<script>
+    let data = [
+        {
+            name: "Mohit",
+            email: "355mohitdudhat@gmail.com" ,
+            password: "mohit@123" 
+        },
+        {
+            name: "Kenil",
+            email: "kenil@gmail.com" ,
+            password: "kenil@123" 
+        }
+    ]
+    
+    function viewData(){
+        let tbl = "";
+        data.map(function(val){
+            tbl += `<tr>
+                <td>${val.name}</td>
+                <td>${val.email}</td>
+                <td>${val.password}</td>
+            </tr>`
+        })
+        document.getElementById('tableBody').innerHTML = tbl;
+        
+    }
+    viewData();
+    function save(){
+        let userName = document.getElementById('name').value;
+        let userEmail = document.getElementById('email').value;
+        let userPassword = document.getElementById('password').value;
+        let obj = {
+            name: userName,
+            email: userEmail ,
+            password: userPassword
+        }
+          
+        data.push(obj);
+        viewData();
+        document.getElementById('name').value = null;
+        document.getElementById('email').value = null;
+        document.getElementById('password').value = null;
+    }
+</script>
+</html>

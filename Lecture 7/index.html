@@ -1,0 +1,86 @@
+<table border="1" style="border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Gr Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody id="tableData">
+
+    </tbody>
+
+</table>
+<script type="text/javascript">
+    const objs = [
+        {
+            grid: 355,
+            name: "Mohit Dudhat",
+            email: "355mohitdudhat@gmail.com",
+            password: "1023sfd54867",
+            course: ["html", "css", "Bootstrap", "Javascript", "Node.js"]
+        },
+        {
+            grid: 34522,
+            name: "Kenil Godhani",
+            email: "kenilgodhani@gmail.com",
+            password: "25asds110254",
+            course: ["html", "css", "Bootstrap", "Javascript", "Node.js"]
+        },
+        {
+            grid: 3545,
+            name: "Rudra Patel",
+            email: "rudrapatel@gmail.com",
+            password: "102d354867",
+            course: ["html", "css", "Bootstrap", "Javascript", "Node.js"]
+        },
+        {
+            grid: 354655,
+            name: "Gaurav Patel",
+            email: "gauravpatel@gmail.com",
+            password: "102354f867",
+            course: ["html", "css", "Bootstrap", "Javascript", "Node.js"]
+        },
+        {
+            grid: 3545,
+            name: "Taksh Mavani",
+            email: "takshmavani@gmail.com",
+            password: "102354867",
+            course: ["html", "css", "Bootstrap", "Javascript", "Node.js"]
+        }
+    ];
+    console.log(objs);
+    const tableData = () => {
+        let tbl = ``;
+
+        for (let i in objs) {
+            if (i % 2 == 0) {
+                tbl += `
+            <tr style = "background-color:pink">
+                <th>${objs[i].grid}</th>
+                <th>${objs[i].name}</th>
+                <th>${objs[i].email}</th>
+                <th>${objs[i].password}</th>
+                <th>${objs[i].course.map((val) => { { return "<td>" + val + "</td>"} }).join("")}</th>
+            </tr>
+        `
+        
+            } else {
+                tbl += `
+            <tr style = "background-color:yellow">
+                <th>${objs[i].grid}</th>
+                <th>${objs[i].name}</th>
+                <th>${objs[i].email}</th>
+                <th>${objs[i].password}</th>
+                <th>${objs[i].course.map((val) => { { return "<tr>" + val + "</tr>"} }).join("")}</th>
+            </tr>
+        `
+            }
+            document.getElementById("tableData").innerHTML = tbl;
+        }
+
+    }
+    tableData();
+</script>
