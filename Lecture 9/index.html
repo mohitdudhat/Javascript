@@ -1,0 +1,42 @@
+<table border="1" style = "border-collapse:collapse">
+    <tr>
+        <th>Grid</th>
+        <th>Name</th>
+        <th>Course</th>
+    </tr>
+    <tbody id = "tbl">
+        
+    </tbody>
+</table>
+<script type = "text/javascript">
+    class A {
+        print = () => {
+            let tbl = "";
+            data.map((val) =>{
+                tbl = `
+                    <tr>
+                        <td>
+                            ${val.grid}    
+                        </td> 
+                        <td>
+                            ${val.name}    
+                        </td>
+                        <td>
+                            ${val.course}  
+                        </td>
+                    </tr>
+                `
+            });
+            document.getElementById("tbl").innerHTML = tbl;
+        }
+    }
+    data = [
+        {
+            grid: 355,
+            name : 'Mohit',
+            course : 'BCA'
+        }
+    ]
+    let print = new A;
+    print.print();
+</script>
