@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PR 6 - 1</title>
+  </head>
+  <body>
+    <label for="Physics">Physics</label> <br /><br />
+    <input type="number" name="Physics" id="Physics" /> <br />
+    <label for="Chemistry">Chemistry</label> <br /><br />
+    <input type="number" name="Chemistry" id="Chemistry" /> <br />
+    <label for="Biology">Biology</label> <br /><br />
+    <input type="number" name="Biology" id="Biology" /> <br />
+    <label for="Mathematics">Mathematics</label> <br /><br />
+    <input type="number" name="Mathematics" id="Mathematics" /> <br />
+    <label for="Computer">Computer</label> <br /><br />
+    <input type="number" name="Computer" id="Computer" /> <br />
+    <button onclick="makeObj()" type="button">Get the Result</button>
+
+    <br /><br />
+    <h1 id="Result"></h1>
+  </body>
+  <script type="text/javascript">
+    class Student {
+      constructor(obj) {
+        this.Physics = obj.Physics;
+        this.Chemistry = obj.Chemistry;
+        this.Biology = obj.Biology;
+        this.Mathematics = obj.Mathematics;
+        this.Computer = obj.Computer;
+      }
+      findPercentage() {
+        let total =
+          this.Physics +
+          this.Chemistry +
+          this.Biology +
+          this.Mathematics +
+          this.Computer;
+        let percentage = (total * 100) / 500;
+        return percentage;
+      }
+      calculateGrade(percentage) {
+        console.log(percentage);
+        if (percentage >= 90) {
+          return "Grade A";
+        } else if (percentage >= 80) {
+          return "Grade B";
+        } else if (percentage >= 70) {
+          return "Grade C";
+        } else if (percentage >= 60) {
+          return "Grade D";
+        } else if (percentage >= 50) {
+          return "Grade E";
+        } else if (percentage >= 40) {
+          return "Grade F";
+        } else {
+          return "Grade F (Fail)";
+        }
+      }
+    }
+    let submit = () => {
+      let subject = {
+        Physics: Number(document.getElementById("Physics").value),
+        Chemistry: Number(document.getElementById("Chemistry").value),
+        Biology: Number(document.getElementById("Biology").value),
+        Mathematics: Number(document.getElementById("Mathematics").value),
+        Computer: Number(document.getElementById("Computer").value),
+      };
+      console.log(subject);
+      let student = new Student(subject);
+      console.log(student.findPercentage());
+      document.getElementById(
+        "Result"
+      ).innerHTML = `Your Percentage is ${student.findPercentage()} and Grade is '${student.calculateGrade(
+        student.findPercentage()
+      )}'`;
+    };
+  </script>
+</html>
