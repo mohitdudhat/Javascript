@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 10</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Grid</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id = "tbl">
+
+        </tbody>
+    </table>
+
+</body>
+<script type = "text/javascript">
+    let tbl="";
+    class Demo{
+        constructor(grid,name,course){
+            this.grid = grid;
+            this.name = name;
+            this.course = course;
+        }
+        detail = () =>{
+            tbl += `
+                <tr>
+                    <td>${this.grid}</td>    
+                    <td>${this.name}</td>    
+                    <td>${this.course}</td>    
+                </tr>
+            `
+            document.getElementById("tbl").innerHTML = tbl;
+        }
+    }
+let obj = new Demo(122, 'Tirth', 'BCA');
+let obj2 = new Demo(125, 'Bonika', 'BCA');
+obj.detail();
+obj2.detail();
+0.
+0
+</script>
+</html>

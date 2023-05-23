@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value</title>
+</head>
+
+<body>
+    <form action="">
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td>Name:-</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Password:-</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:-</td>
+                <td><input type="password" id="confirm-password"></td>
+            </tr>
+            <tr>
+                <td>Submit</td>
+                <td><input value="Submit" type="button" onclick="save()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script type="text/javascript">
+   
+    function save(){
+        let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirm-password').value;
+
+        console.log(name);
+        if (!name) {
+            alert('Enter Your Name');
+            return false;
+        }
+        if (!email) {
+            alert('Enter Your Email');
+            return false;
+        } else {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!email.match(mailformat)) {
+                alert("Enter Valid Email:");
+                return false;
+            }
+        }
+        if (!password) {
+            alert('Enter Your Password');
+            return false;
+        }else{
+            let passw= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+            if(password.length < 8  && password.match(passw)){
+                alert("password should containt at least 8 character and one symbole:");
+                return false;
+            }else if(password.length > 15 ){
+                alert("password is too long");
+                return false;
+            }
+        }
+        if (!confirmPassword) {
+            alert('Enter Your confirm-password');
+            return false;
+        }else if(password === confirmPassword){
+            alert("your form has been submited");
+            empty();
+            return false;
+        }else{
+            alert("match your password");
+            return false;
+        }
+   
+    }
+    const empty = ()=>{
+        document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('password').value = "";
+    document.getElementById('confirm-password').value = "";
+    }
+
+</script>
+
+</html>
