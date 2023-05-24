@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PR 6 - 2</title>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody id="tbl"></tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    let tbl = "";
+    class Table {
+      constructor(obj) {
+        this.name = obj.name;
+        this.email = obj.email;
+        this.phone = obj.phone;
+        console.log(this.name);
+      }
+      print = () => {
+        tbl += `
+        <tr>
+            <td>${this.name}</td>
+            <td>${this.email}</td>
+            <td>${this.phone}</td>
+        </tr>
+        `;
+        document.getElementById("tbl").innerHTML = tbl;
+      };
+    }
+    let data = [
+      {
+        name: "jay",
+        email: "jay@gmail.com",
+        phone: "12345",
+      },
+      {
+        name: "ajay",
+        email: "ajay@gmail.com",
+        phone: "12345",
+      },
+      {
+        name: "vijay",
+        email: "vijay@gmail.com",
+        phone: "12345",
+      },
+      {
+        name: "ashish",
+        email: "ashish@gmail.com",
+        phone: "12345",
+      },
+    ];
+    data.map((val) => {
+      let table = new Table(val);
+      table.print();
+    });
+  </script>
+</html>
