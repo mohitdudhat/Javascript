@@ -161,7 +161,6 @@ button{
     </form>
 </body>
 </html>
-
 <script type="text/javascript">
     const save = () => {
         let name = document.getElementById('name').value;
@@ -172,38 +171,43 @@ button{
         let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let pass=  /^[A-Za-z]\w{7,14}$/;
 
-        if(!name){
-            alert('Enter Your Name.');
+        try{
+            if(!name){
+            throw 'Enter Your Name.'
             return false;
         }
         if(!name.match(validFirstName)){
-            alert('Enter a valid username.');
+            throw 'Enter a valid name.'
             return false;
         }
         if(!email){
-            alert('Enater Your email.');
+            throw 'Enater Your email.'
             return false;
         }
         if(!email.match(mailformat)){
-            alert('Enter a valid email.');
+            throw 'Enter a valid email.'
             return false;
         }
         if(!password){
-            alert('Enater Your password.');
+            throw 'Enter Your password.'
             return false;
         }
         if(!password.match(pass)){
-            alert('Enter a valid password.');
+            throw 'Enter a valid password.'
             return false;
         }
         if(cpassword != password){
-            alert('Enetr a same password.');
+            throw 'Enter a same password.'
             return false;
         }
         if(cpassword == password){
-            alert("your Form is subbmited");
+            throw "your Form is subbmited";
             empty();
         }
+        }catch(e){
+            alert(e);
+        }
+       
         
         
     }
