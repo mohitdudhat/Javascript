@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR 9</title>
+    <style>
+        .table td{
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" >
+        <tr>
+            <td>Row :</td>
+            <td><input type="text" name="row" id="row"></td>
+        </tr>
+        <tr>
+            <td>Column:</td>
+            <td><input type="text" name="column" id="column"></td>
+        </tr>
+        <tr>
+            <td>Submit:</td>
+            <td><input type="button" id="Submit" value="submit" onclick="save()"></td>
+        </tr>
+    </table>
+<br>
+    <table border="1" style="border-collapse: collapse;" class="table">
+        <tbody id="tbl">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    function save(){
+        let row = Number(document.getElementById('row').value);
+        let column = Number(document.getElementById('column').value);
+
+        let table = makeTable(row,column);
+        document.getElementById('tbl').innerHTML = table;
+    }
+    function makeTable(row,column){
+        console.log("j");
+        let tbl = "";
+        for (let i = 1; i <= row; i++) {
+            for (let j = 1; j <= column; j++) {
+                tbl += "<td></td>";
+            }
+            tbl = "<tr>"+tbl+"</tr>";
+        }
+        return tbl;
+    }
+</script>
+</html>
