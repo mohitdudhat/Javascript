@@ -51,7 +51,8 @@
       margin-top: 20px;
       position: relative;
     }
-    .wrapper form .field input {
+    .wrapper form .field input,
+    form .field select {
       height: 100%;
       width: 100%;
       outline: none;
@@ -121,6 +122,13 @@
       background: linear-gradient(-135deg, #c850c0, #4158d0);
       transition: all 0.3s ease;
     }
+    form .field select {
+      border-color: #4158d0;
+      color: black;
+    }
+    form .field select option {
+      color: black;
+    }
     form .field input[type="button"]:active {
       transform: scale(0.95);
     }
@@ -146,6 +154,13 @@
         <div class="field">
           <input type="text" id="name" />
           <label>Name</label>
+        </div>
+        <div class="field">
+          <select name="role" id="role">
+            <option value="default">--Select Your Role--</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
         </div>
         <div class="field">
           <input type="email" id="email" name="email" />
@@ -174,5 +189,6 @@
       </form>
     </div>
   </body>
+  <script src="watcher.js"></script>
   <script src="Sign up.js"></script>
 </html>

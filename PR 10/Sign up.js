@@ -1,12 +1,13 @@
 let data = [];
 console.log("hello");
-let save = (name, email, password, confirmPassword) => {
+let save = (name, email, password, confirmPassword, role) => {
   if (password === confirmPassword) {
     obj = {
       userid: Math.floor(Math.random() * 10000),
       name: name,
       email: email,
       password: password,
+      role: role,
     };
     console.log(obj);
     let getData = JSON.parse(localStorage.getItem("User"));
@@ -41,12 +42,16 @@ function validateForm() {
   var emailInput = document.getElementById("email").value;
   var passwordInput = document.getElementById("password").value;
   var confirmPasswordInput = document.getElementById("confirmPassword").value;
+  var role = document.getElementById("role").value;
 
   if (nameInput === "") {
     alert("Please enter your name.");
     return;
   }
-
+  if (role === "default") {
+    alert("Please choose a valid role");
+    return;
+  }
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailInput)) {
     alert("Please enter a valid email address.");
@@ -63,5 +68,5 @@ function validateForm() {
     return;
   }
   document.getElementById("remember-me").checked = false;
-  save(nameInput, emailInput, passwordInput, confirmPasswordInput);
+  save(nameInput, emailInput, passwordInput, confirmPasswordInput, role);
 }

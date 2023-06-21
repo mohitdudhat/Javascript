@@ -1,8 +1,3 @@
-let checkUser = JSON.parse(localStorage.getItem("Login"));
-if (checkUser) {
-  alert("Already logIn");
-  window.location.href = "dist/index.html";
-}
 let check = () => {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
