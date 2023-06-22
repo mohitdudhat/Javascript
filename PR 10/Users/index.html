@@ -181,7 +181,7 @@
             <div class="transfer-section-header">
               <h2>Users</h2>
               <div class="filter-options">
-                <p>Filter selected: more than 100 $</p>
+                <p id="total">Filter selected: more than 100 $</p>
                 <button class="icon-button">
                   <i class="ph-funnel"></i>
                 </button>
@@ -413,6 +413,9 @@
         });
         localStorage.setItem("User", JSON.stringify(record));
       };
+      document.getElementById("total").innerHTML = `Total Users : ${
+        JSON.parse(localStorage.getItem("User")).length
+      }`;
     </script>
   </body>
 </html>
