@@ -734,13 +734,6 @@
     ></script>
   </body>
   <script type="text/javascript">
-    let checkUser = JSON.parse(localStorage.getItem("Login"));
-    if (checkUser) {
-      alert("Already logIn");
-      window.location.href = "index.html";
-    } else {
-      window.location.href = "login.html";
-    }
     let record = JSON.parse(localStorage.getItem("Cart"));
     if (JSON.parse(localStorage.getItem("Cart")).length === 0) {
       window.location.href = "index.html";

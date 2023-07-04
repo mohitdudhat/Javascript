@@ -2267,7 +2267,9 @@
     let imgLink = element.getElementsByTagName("img")[0].getAttribute("src");
     let productName =
       element.getElementsByClassName("product-name")[0].textContent;
-    let price = element.getElementsByClassName("price")[0].textContent;
+    let price = parseInt(
+      element.getElementsByClassName("price")[0].textContent.replace("$", "")
+    );
     let obj = {
       productID: Math.floor(Math.random() * 10000),
       img: imgLink,
@@ -2310,7 +2312,9 @@
     let imgLink = element.getElementsByTagName("img")[0].getAttribute("src");
     let productName =
       element.getElementsByClassName("product-name")[0].textContent;
-    let price = element.getElementsByClassName("price")[0].textContent;
+    let price = parseInt(
+      element.getElementsByClassName("price")[0].textContent.replace("$", "")
+    );
 
     let obj = {
       productID: Math.floor(Math.random() * 10000),
